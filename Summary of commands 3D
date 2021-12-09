@@ -1,0 +1,13 @@
+import deeplabcut
+config_path3d=deeplabcut.create_new_project_3d('3DProject_try#34','Dvir',num_cameras = 2,working_directory=(r"C:\Users\Owner\Desktop\Dvir\DvirDLC\projects"))
+deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=False, alpha=0.9)
+deeplabcut.calibrate_cameras(config_path3d, cbrow=8, cbcol=6, calibrate=True, alpha=0.9)
+deeplabcut.check_undistortion(config_path3d, cbrow=8, cbcol=6)
+deeplabcut.triangulate(config_path3d, r"C:\Users\Owner\Desktop\Dvir\DvirDLC\Experiment_Project\analysis_lib\1304_3D", filterpredictions=True,save_as_csv=True)
+
+deeplabcut.create_labeled_video_3d(config_path3d, [r"C:\Users\Owner\Desktop\Dvir\DvirDLC\Experiment_Project\analysis_lib\new(0110)_1304_3D"], start=50, end=250)
+
+
+config_path3d = r"C:\Users\Owner\Desktop\Dvir\DvirDLC\projects\3DProject_try#33-Dvir-2021-10-01-3d\config.yaml"
+
+deeplabcut.create_labeled_video_3d(config_path3d, [r"C:\Users\Owner\Desktop\Dvir\DvirDLC\Experiment_Project\analysis_lib\temp"], start=50, end=250)
